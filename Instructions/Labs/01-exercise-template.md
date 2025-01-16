@@ -1,6 +1,5 @@
----
-lab:
-  title: Creación de un agente personalizado
+
+laboratorio: "Creación de un agente personalizado"
 ---
 <!--
 Edit the metadata above to manage the list of exercises in the home page of the GitHub site that gets generated.
@@ -48,7 +47,7 @@ Seleccione **Siguiente**.
 
 ## Tarea 2: Implementación de RAG para el modelo de Azure OpenAI
 
-Ahora vamos, ...
+En esta tarea, aprenderás cómo implementar RAG mediante un origen de datos para tu propio entorno de prueba.
 
 1. En la página del nuevo recurso de Azure OpenAI, haz clic en **Ir a Azure OpenAI Studio** en la cinta de opciones de la parte superior de la página.
 2. En la nueva página titulada **Bienvenido al servicio Azure OpenAI**, haz clic en **Chat** en el menú de navegación situado a la izquierda de la pantalla.
@@ -61,7 +60,7 @@ Ahora vamos, ...
    
    a. En el campo **Suscripción**, asegúrate de que está seleccionado el valor predeterminado.
    
-    b. En el campo **Seleccionar recurso de Azure Blob Storage**, selecciona **Crear un nuevo recurso de Azure Blob Storage** > en la nueva ventana denominada **Crear una cuenta de almacenamiento**, en la pestaña **Aspectos básicos**, asegúrate de que los campos **Suscripción** y **Grupo de recursos** tengan los valores predeterminados; elige el único valor disponible en **Grupo de recursos**. En **Detalles de la instancia**, establece un nombre para **Nombre de la cuenta de almacenamiento**. Deja el resto de los campos como están. Seleccione **Revisar + crear**. En la pestaña **Revisar + crear**, selecciona el botón **Crear**. El recurso de Azure Blob Storage tardará un momento en implementarse.
+    b. En el campo **Seleccionar recurso de Azure Blob Storage**, selecciona **Crear un nuevo recurso de Azure Blob Storage** > en la nueva ventana denominada **Crear una cuenta de almacenamiento**, en la pestaña **Aspectos básicos**, asegúrate de que los campos **Suscripción** y **Grupo de recursos** tengan los valores predeterminados; elige el único valor disponible en **Grupo de recursos**. En **Detalles de la instancia**, establece un nombre para **Nombre de la cuenta de almacenamiento**. Deja el resto de los campos como están. Selecciona **Revisar + crear.** En la pestaña **Revisar + crear**, selecciona el botón **Crear**. El recurso de Azure Blob Storage tardará un momento en implementarse.
    
    c. Vuelve a la ventana de **Chat playground**. Selecciona el botón de actualización junto al campo **Seleccionar recurso de Azure Blob storage** > selecciona el recurso que has realizado en el paso b anterior. Selecciona el botón **Activar CORS**.
    
@@ -78,7 +77,7 @@ Ahora vamos, ...
 
  ## Tarea 3: Crear y probar un agente personalizado en la herramienta de prueba y Teams
 
-Ahora vamos, ...
+En esta tarea, crearás el agente personalizado y probarás el agente.
 
 1. Abra **Visual Studio Code**.
 2. En la parte derecha de la ventana de código de Visual Studio selecciona el icono **Kit de herramientas de Teams** > selecciona **Crear una nueva aplicación** > en el desplegable selecciona **Agente de motor personalizado** (nota: según la versión del kit de herramientas de Teams, es posible que tengas que seleccionar ** Copilot personalizado**) > **Bot de chat de IA básico** > **JavaScript** > **Azure OpenAI**.
@@ -96,13 +95,25 @@ Ahora vamos, ...
 
    f. En la nueva ventana de VS Code de la nueva aplicación creada a partir de los pasos anteriores, ve al icono **Kit de herramientas de Teams** en el lado izquierdo de la pantalla.
 
+   **Nota:** los pasos g-i deben completarse para el entorno de un usuario que no tiene acceso de administrador al Centro de administración de Microsoft Teams. Si los usuarios tienen un inquilino de M365 con acceso de administrador, realiza los pasos j-m en su lugar.
+
    g. En la sección **Cuentas**, haz clic en **Iniciar sesión en Microsoft 365**. Se abrirá una nueva ventana en tu navegador. Inicia sesión con las credenciales proporcionadas.
 
    h. Vuelve a la página de VS Code de la aplicación. Ahora deberías ver una marca de verificación verde con las palabras **Carga de aplicaciones personalizadas habilitada** en **Cuentas.
 
    i. En la sección **Cuentas**, haz clic en **Iniciar sesión en Azure**. Haz clic en **Aceptar** en cada ventana emergente. Se abrirá una nueva ventana en tu navegador. Inicia sesión con las credenciales proporcionadas.
+
+   Para los usuarios que tienen un inquilino de M365 con acceso de administrador al Centro de administración de Microsoft Teams, realiza los pasos siguientes en lugar de los pasos g-i anteriores:
+
+   j. Inicia sesión en https://admin.teams.microsoft.com con tus credenciales de administrador.
+
+   k. Ve a  **Aplicaciones de Teams** en la barra lateral y, a continuación, selecciona  **Directivas de instalación**.
+
+   l. Selecciona la directiva  **Global (valor predeterminado de toda la organización)** y, a continuación, activa la alternancia  **Cargar aplicaciones personalizadas** .
+
+   m. Desplázate hacia abajo y selecciona el botón  **Aceptar** para guardar tus cambios. Tu inquilino ahora permitirá la instalación de prueba de aplicaciones personalizadas. 
    
-4. Ve a **src/prompts/chat/skprompt.txt** en la ventana de VS Code de la aplicación. Elimina cualquier texto del archivo y pega lo siguiente: "La siguiente es una conversación con un asistente de IA, que es un experto en responder preguntas sobre el contexto dado. 
+5. Ve a **src/prompts/chat/skprompt.txt** en la ventana de VS Code de la aplicación. Elimina cualquier texto del archivo y pega lo siguiente: "La siguiente es una conversación con un asistente de IA, que es un experto en responder preguntas sobre el contexto dado. 
 
 Las respuestas deben estar en un estilo periodístico corto con menos de 80 palabras". 
 
