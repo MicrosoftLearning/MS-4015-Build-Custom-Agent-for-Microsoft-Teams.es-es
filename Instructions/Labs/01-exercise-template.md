@@ -20,7 +20,7 @@ Este ejercicio debería tardar en completarse **30** minutos aproximadamente. <
 Primero, necesitas...
 
 1. Ve a **https://portal.azure.com** en tu explorador Edge.
-1. Inicia sesión en Azure Portal con la credencial proporcionada en este entorno de laboratorio.
+1. Inicia sesión en Azure Portal.
 2. Haz clic en **+ Crear un recurso** en la parte superior izquierda de la pantalla.
 1. En el cuadro de búsqueda escribe **azure openai** y presiona ENTRAR.
 1. Un resultado denominado **Azure OpenAI** debe aparecer como una opción. En la esquina inferior izquierda de esta opción se encuentra un botón con la etiqueta **Crear**. Presiona> **Crear** > **Azure OpenAI.**
@@ -49,14 +49,13 @@ Seleccione **Siguiente**.
 
 En esta tarea, aprenderás cómo implementar RAG mediante un origen de datos para tu propio entorno de prueba.
 
-1. En la página del nuevo recurso de Azure OpenAI, haz clic en **Ir a Azure OpenAI Studio** en la cinta de opciones de la parte superior de la página.
-2. En la nueva página titulada **Bienvenido al servicio Azure OpenAI**, haz clic en **Chat** en el menú de navegación situado a la izquierda de la pantalla.
-3. En la nueva página titulada **Área de juegos de chat**, en **Configuración**, selecciona **+ Crear nueva implementación** > **A partir de modelos base**.
-4. En la ventana emergente titulada **Seleccionar un modelo de finalización de chat** desplázate hacia abajo y selecciona la opción **gpt-4o** > **Confirmar**.
-5. En la ventana **Implementar modelo gtp-4o**, deja su configuración predeterminada y selecciona **Implementar**.
-6. En la página **Área de juegos de chat**, selecciona **Agregar los datos** ubicada cerca de la parte inferior de la pantalla > **+ Agregar un origen de datos**.
-7. En la ventana **Seleccionar o agregar origen de datos**, selecciona el desplegable de **Seleccionar origen de datos** y selecciona **Cargar archivos (versión preliminar)**.
-8. En la siguiente página **Origen de datos**, asegúrate de que el desplegable **Seleccionar origen de datos** está establecido en **Cargar archivos (versión preliminar)**.
+1. En la página de tu nuevo recurso de Azure OpenAI, haz clic en **Ir al portal de Azure AI Foundry** en la cinta de opciones de la parte superior de la página.
+2. En la nueva página titulada **Área de juegos de chat**, en **Configuración**, selecciona **+ Crear nueva implementación** > **A partir de modelos base**.
+3. En la ventana emergente titulada **Seleccionar un modelo de finalización de chat** desplázate hacia abajo y selecciona la opción **gpt-4o** > **Confirmar**.
+4. En la ventana **Implementar modelo gtp-4o**, deja su configuración predeterminada y selecciona **Implementar**.
+5. En la página **Área de juegos de chat**, selecciona **Agregar los datos** ubicada cerca de la parte inferior de la pantalla > **+ Agregar un origen de datos**.
+6. En la ventana **Seleccionar o agregar origen de datos**, selecciona el desplegable de **Seleccionar origen de datos** y selecciona **Cargar archivos (versión preliminar)**.
+7. En la siguiente página **Origen de datos**, asegúrate de que el desplegable **Seleccionar origen de datos** está establecido en **Cargar archivos (versión preliminar)**.
    
    a. En el campo **Suscripción**, asegúrate de que está seleccionado el valor predeterminado.
    
@@ -64,7 +63,11 @@ En esta tarea, aprenderás cómo implementar RAG mediante un origen de datos par
    
    c. Vuelve a la ventana de **Chat playground**. Selecciona el botón de actualización junto al campo **Seleccionar recurso de Azure Blob storage** > selecciona el recurso que has realizado en el paso b anterior. Selecciona el botón **Activar CORS**.
    
-9. En el campo **Seleccionar recurso de Azure AI Search**, selecciona **Crear un nuevo recurso de Azure AI Search**.  Asegúrate de que los campos **Suscripción** y **Grupo de recursos** están establecidos en los valores que elijas. **Nota:** Como este laboratorio está pensado para completarse en el propio entorno del alumno, éste tendrá que usar su propio criterio a la hora de seleccionar los valores para los campos **Suscripción** y, **Grupo de recursos**. Haz clic en el valor desplegable de **Grupo de recursos** para seleccionar la opción que elijas. Escribe un **Nombre de servicio**> Asegúrate de que todos los demás campos estén establecidos en sus valores predeterminados > selecciona **Revisar + crear** > **Crear**. El recurso Azure AI Search tardará un momento en implementarse.
+8. En el campo **Seleccionar recurso de Azure AI Search**, selecciona **Crear un nuevo recurso de Azure AI Search**.  Asegúrate de que los campos **Suscripción** y **Grupo de recursos** están establecidos en los valores que elijas.
+
+   **Nota:** Como este laboratorio está pensado para completarse en el propio entorno del alumno, éste tendrá que usar su propio criterio a la hora de seleccionar los valores para los campos **Suscripción** y, **Grupo de recursos**.
+
+9. Haz clic en el valor desplegable de **Grupo de recursos** para seleccionar la opción que elijas. Escribe un **Nombre de servicio**> Asegúrate de que todos los demás campos estén establecidos en sus valores predeterminados > selecciona **Revisar + crear** > **Crear**. El recurso Azure AI Search tardará un momento en implementarse.
 10. Vuelve a la ventana de **Chat playground**. Selecciona el botón de actualización junto al campo **Seleccionar recurso de Azure Blob storage** > selecciona el recurso que has realizado en el paso 9 anterior.
 11. Escribe un nombre para el campo **Introduce el nombre del índice** > **Siguiente**. Copia y pega este nombre en algún lugar accesible, ya que lo necesitarás en las próximas tareas.
 12. En la sección **Cargar archivos**, selecciona **Examinar un archivo** > En el explorador de archivos, ve a **Documentos** > selecciona los tres archivos: **ContosoAI ChipEnhance Perks Program.docx**, **ContosoAI Insurance Plans.docx**, y **Overview of ContosoAI.docx** > **Abre** > los tres archivos deben aparecer ahora en la página **Cargar archivos** de la ventana > selecciona **Cargar archivos** > **Siguiente**.
@@ -155,4 +158,10 @@ Las respuestas deben estar en un estilo periodístico corto con menos de 80 pala
 11. Vuelve a la página de la ventana de VS Code de la aplicación. Selecciona el desplegable del botón **Depurar** y selecciona **Depurar en Teams (Edge)** luego pulsa **F5** o el botón de reproducción verde.
 13. Se abrirá una nueva ventana en tu navegador Edge. Se le solicitará que inicie sesión. Usa la información de inicio de sesión proporcionada para iniciar sesión. Una vez iniciada la sesión, cierra la ventana.
 14. Repite de nuevo el paso 11. Debe haber una ventana con el título de la aplicación recién creada. Selecciona **Agregar** > **Abrir**.
-15. ¡Enhorabuena! Ahora puedes hacer al agente cualquier pregunta sobre los archivos de datos RAG. 
+15. ¡Enhorabuena! Ahora puedes hacer al agente cualquier pregunta sobre los archivos de datos RAG.
+16. **Nota:** como este agente se realizó con fines educativos con tu propia suscripción, los usuarios deben proceder a la eliminación del agente tras la finalización de este laboratorio. Para eliminar un agente personalizado en Microsoft Teams, puedes hacer lo siguiente:
+- Selecciona el agente que quieras eliminar y, después, elige el **icono Más opciones (...)** y selecciona **Eliminar**.
+- Para eliminar el agente de un chat, selecciona los puntos suspensivos en el subproceso y elige **Administrar aplicaciones**.
+- En la experiencia de creación de un agente, selecciona los **puntos suspensivos (...)** y elige **Eliminar**.
+
+**FIN DEL LABORATORIO**
