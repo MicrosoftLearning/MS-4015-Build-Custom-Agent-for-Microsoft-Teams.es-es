@@ -1,5 +1,5 @@
 
-laboratorio: "Creación de un agente personalizado"
+Laboratorio: "Creación de un agente personalizado"
 ---
 <!--
 Edit the metadata above to manage the list of exercises in the home page of the GitHub site that gets generated.
@@ -11,11 +11,13 @@ To enable GitHub page publishing, edit the Page settings for the repo and publis
 
 En este ejercicio, crearás un recurso de Azure OpenAI que actúe como base para crear el agente personalizado.
 
-Este ejercicio debería tardar en completarse **30** minutos aproximadamente. <!-- update with estimated duration -->
+Este ejercicio debería tardar en completarse **60** minutos aproximadamente. <!-- update with estimated duration -->
 
-**Nota:** Se espera que los alumnos completen este laboratorio en sus propios entornos.
+**Nota:** los alumnos pueden completar este laboratorio con estas opciones
+1) El entorno de laboratorio Skillable
+2) Se espera que los alumnos completen este laboratorio en sus propios entornos para todos los demás ALH.
 
-##  Tarea 1: Crear un recurso de Azure OpenAI 
+##  Tarea 1: Creación de un recurso de Azure OpenAI 
 
 Primero, necesitas...
 
@@ -24,7 +26,9 @@ Primero, necesitas...
 2. Haz clic en **+ Crear un recurso** en la parte superior izquierda de la pantalla.
 1. En el cuadro de búsqueda escribe **azure openai** y presiona ENTRAR.
 1. Un resultado denominado **Azure OpenAI** debe aparecer como una opción. En la esquina inferior izquierda de esta opción se encuentra un botón con la etiqueta **Crear**. Presiona> **Crear** > **Azure OpenAI.**
-1. En la página **Crear Azure OpenAI** establece los siguientes campos: **Nota:** Dado que este laboratorio está diseñado para completarse en el propio entorno del alumno, los alumnos tendrán que usar su propio criterio a la hora de seleccionar los valores de los campos **Suscripción** , **Plan de tarifa** y **Grupo de recursos**.
+1. En la página **Crear Azure OpenAI**, establece los campos siguientes:
+
+**Nota:** los alumnos que usan su propio entorno tendrán que usar su propio criterio al seleccionar valores para los campos **Suscripción**, **Plan de tarifa** y **Grupo de recursos**. Los alumnos que usan el entorno de laboratorio Skillable tienen que seleccionar los valores predeterminados para los campos en los siguientes pasos de la a la d.
    
    a. **Suscripción** usa tu propio criterio al rellenar este campo.
    
@@ -34,12 +38,12 @@ Primero, necesitas...
    
    d. **Plan de tarifa**: el valor predeterminado es **Estándar S0**, pero usa tu propio criterio al rellenar este campo.
    
-Seleccione **Siguiente**.
+Selecciona **Siguiente**.
 
 7. En la página siguiente, en la pestaña **Red**, selecciona la opción **Todas las redes, incluyendo Internet, pueden acceder a este recurso.**
-Seleccione **Siguiente**.
+Selecciona **Siguiente**.
 8. En la página siguiente, en la pestaña **Etiquetas**, deja en blanco los campos Nombre y Valor.
-Seleccione **Siguiente**.
+Selecciona **Siguiente**.
 9. En la página siguiente, en la pestaña **Revisar + enviar**, presiona **Crear**.
 10. Se te llevará a una página donde se va a crear este nuevo recurso de Azure OpenAI. Verás las palabras **Implementación en curso**. Espera unos segundos a que este recurso termine de implementarse. Una vez implementado el recurso, haz clic en el botón **Ir al recurso**.
 11. **Resultado:** ahora estarás en la página con el recurso de Azure OpenAI recién creado. Para comprobarlo, comprueba el nombre del recurso en la esquina superior izquierda de la página. Este nombre debe coincidir con el nombre que has elegido en el paso 5c anterior.
@@ -56,16 +60,18 @@ En esta tarea, aprenderás cómo implementar RAG mediante un origen de datos par
 5. En la página **Área de juegos de chat**, selecciona **Agregar los datos** ubicada cerca de la parte inferior de la pantalla > **+ Agregar un origen de datos**.
 6. En la ventana **Seleccionar o agregar origen de datos**, selecciona el desplegable de **Seleccionar origen de datos** y selecciona **Cargar archivos (versión preliminar)**.
 7. En la siguiente página **Origen de datos**, asegúrate de que el desplegable **Seleccionar origen de datos** está establecido en **Cargar archivos (versión preliminar)**.
-   
+
+**Notas:** los alumnos que usan su propio entorno pueden tener que usar su propio criterio al rellenar campos para los siguientes pasos de la a la c. Los alumnos que usan el entorno Skillable tienen que usar los valores predeterminados como se indica en los siguientes pasos a y b. 
+  
    a. En el campo **Suscripción**, asegúrate de que está seleccionado el valor predeterminado.
    
-    b. En el campo **Seleccionar recurso de Azure Blob Storage**, selecciona **Crear un nuevo recurso de Azure Blob Storage** > en la nueva ventana denominada **Crear una cuenta de almacenamiento**, en la pestaña **Aspectos básicos**, asegúrate de que los campos **Suscripción** y **Grupo de recursos** tengan los valores predeterminados; elige el único valor disponible en **Grupo de recursos**. En **Detalles de la instancia**, establece un nombre para **Nombre de la cuenta de almacenamiento**. Deja el resto de los campos como están. Selecciona **Revisar + crear.** En la pestaña **Revisar + crear**, selecciona el botón **Crear**. El recurso de Azure Blob Storage tardará un momento en implementarse.
+   b. En el campo **Seleccionar recurso de Azure Blob Storage**, selecciona **Crear un nuevo recurso de Azure Blob Storage** > en la nueva ventana denominada **Crear una cuenta de almacenamiento**, en la pestaña **Datos básicos**, asegúrate de que los campos **Suscripción** y **Grupo de recursos** tengan los valores predeterminados; elige el único valor disponible en **Grupo de recursos**. En **Detalles de la instancia**, establece un nombre para **Nombre de la cuenta de almacenamiento**. Deja el resto de los campos como están. Selecciona **Revisar + crear.** En la pestaña **Revisar + crear**, selecciona el botón **Crear**. El recurso de Azure Blob Storage tardará un momento en implementarse.
    
    c. Vuelve a la ventana de **Chat playground**. Selecciona el botón de actualización junto al campo **Seleccionar recurso de Azure Blob storage** > selecciona el recurso que has realizado en el paso b anterior. Selecciona el botón **Activar CORS**.
    
 8. En el campo **Seleccionar recurso de Azure AI Search**, selecciona **Crear un nuevo recurso de Azure AI Search**.  Asegúrate de que los campos **Suscripción** y **Grupo de recursos** están establecidos en los valores que elijas.
 
-   **Nota:** Como este laboratorio está pensado para completarse en el propio entorno del alumno, éste tendrá que usar su propio criterio a la hora de seleccionar los valores para los campos **Suscripción** y, **Grupo de recursos**.
+   **Nota:** los alumnos que usan su entorno tienen que usar su propio criterio al seleccionar valores para los campos **Suscripción** y, **Grupo de recursos**.
 
 9. Haz clic en el valor desplegable de **Grupo de recursos** para seleccionar la opción que elijas. Escribe un **Nombre de servicio**> Asegúrate de que todos los demás campos estén establecidos en sus valores predeterminados > selecciona **Revisar + crear** > **Crear**. El recurso Azure AI Search tardará un momento en implementarse.
 10. Vuelve a la ventana de **Chat playground**. Selecciona el botón de actualización junto al campo **Seleccionar recurso de Azure Blob storage** > selecciona el recurso que has realizado en el paso 9 anterior.
@@ -94,11 +100,12 @@ En esta tarea, crearás el agente personalizado y probarás el agente.
 
    d. En **Elige la carpeta donde se ubicará la carpeta de tu sala de proyectos**, selecciona **Carpeta predeterminada**.
 
-   e. En **Introducir nombre de aplicación** escribe cualquier nombre > **Entrar**> en la ventana emergente selecciona **Sí, confío en los autores**.
+   e. En **Introducir nombre de aplicación** escribe cualquier nombre > **Entrar**> en la ventana emergente, selecciona **Sí, confío en los autores**.
 
-   f. En la nueva ventana de VS Code de la nueva aplicación creada a partir de los pasos anteriores, ve al icono **Kit de herramientas de Teams** en el lado izquierdo de la pantalla.
+   f. En la nueva ventana de VS Code de la aplicación recién creada a partir de los pasos anteriores, ve al icono **Kit de herramientas de Teams** en el lado izquierdo de la pantalla.
 
-   **Nota:** los pasos g-i deben completarse para el entorno de un usuario que no tiene acceso de administrador al Centro de administración de Microsoft Teams. Si los usuarios tienen un inquilino de M365 con acceso de administrador, realiza los pasos j-m en su lugar.
+   **Nota:** los pasos g a i deben completarse para el entorno de un usuario que no tiene acceso de administrador al Centro de administración de Microsoft Teams y los alumnos que usan el entorno Skillable.
+  Los alumnos, con sus propios entornos, tienen que realizar los pasos j a m en su lugar.
 
    g. En la sección **Cuentas**, haz clic en **Iniciar sesión en Microsoft 365**. Se abrirá una nueva ventana en tu navegador. Inicia sesión con las credenciales proporcionadas.
 
@@ -106,7 +113,7 @@ En esta tarea, crearás el agente personalizado y probarás el agente.
 
    i. En la sección **Cuentas**, haz clic en **Iniciar sesión en Azure**. Haz clic en **Aceptar** en cada ventana emergente. Se abrirá una nueva ventana en tu navegador. Inicia sesión con las credenciales proporcionadas.
 
-   Para los usuarios que tienen un inquilino de M365 con acceso de administrador al Centro de administración de Microsoft Teams, realiza los pasos siguientes en lugar de los pasos g-i anteriores:
+   Los usuarios que tienen una licencia de inquilino de M365 con acceso de administrador al Centro de administración de Microsoft Teams, tienen que realizar los pasos siguientes en lugar de los pasos g a i anteriores:
 
    j. Inicia sesión en https://admin.teams.microsoft.com con tus credenciales de administrador.
 
@@ -116,7 +123,7 @@ En esta tarea, crearás el agente personalizado y probarás el agente.
 
    m. Desplázate hacia abajo y selecciona el botón  **Aceptar** para guardar tus cambios. Tu inquilino ahora permitirá la instalación de prueba de aplicaciones personalizadas. 
    
-5. Ve a **src/prompts/chat/skprompt.txt** en la ventana de VS Code de la aplicación. Elimina cualquier texto del archivo y pega lo siguiente: "La siguiente es una conversación con un asistente de IA, que es un experto en responder preguntas sobre el contexto dado. 
+4. Ve a **src/prompts/chat/skprompt.txt** en la ventana de VS Code de la aplicación. Elimina cualquier texto del archivo y pega lo siguiente: "La siguiente es una conversación con un asistente de IA, que es un experto en responder preguntas sobre el contexto dado. 
 
 Las respuestas deben estar en un estilo periodístico corto con menos de 80 palabras". 
 
@@ -158,10 +165,13 @@ Las respuestas deben estar en un estilo periodístico corto con menos de 80 pala
 11. Vuelve a la página de la ventana de VS Code de la aplicación. Selecciona el desplegable del botón **Depurar** y selecciona **Depurar en Teams (Edge)** luego pulsa **F5** o el botón de reproducción verde.
 13. Se abrirá una nueva ventana en tu navegador Edge. Se le solicitará que inicie sesión. Usa la información de inicio de sesión proporcionada para iniciar sesión. Una vez iniciada la sesión, cierra la ventana.
 14. Repite de nuevo el paso 11. Debe haber una ventana con el título de la aplicación recién creada. Selecciona **Agregar** > **Abrir**.
-15. ¡Enhorabuena! Ahora puedes hacer al agente cualquier pregunta sobre los archivos de datos RAG.
-16. **Nota:** como este agente se realizó con fines educativos con tu propia suscripción, los usuarios deben proceder a la eliminación del agente tras la finalización de este laboratorio. Para eliminar un agente personalizado en Microsoft Teams, puedes hacer lo siguiente:
+15. ¡Enhorabuena! Ahora puedes hacer al agente cualquier pregunta sobre los archivos de datos RAG pertinentes.
+16. **Nota:** en el caso de los alumnos que completen este laboratorio en su propio entorno deberán proceder a la eliminación del agente tras la finalización de este laboratorio, ya que este agente se realizó con fines educativos con su propia suscripción. Para eliminar un agente personalizado en Microsoft Teams, puedes hacer lo siguiente:
 - Selecciona el agente que quieras eliminar y, después, elige el **icono Más opciones (...)** y selecciona **Eliminar**.
 - Para eliminar el agente de un chat, selecciona los puntos suspensivos en el subproceso y elige **Administrar aplicaciones**.
-- En la experiencia de creación de un agente, selecciona los **puntos suspensivos (...)** y elige **Eliminar**.
+- En la experiencia de creación de un agente, selecciona los **puntos suspensivos (...)** y elige **Eliminar**. En la experiencia de creación de un agente, selecciona los **puntos suspensivos (...)** y elige **Eliminar**.
+
+**FIN DEL LABORATORIO**
+
 
 **FIN DEL LABORATORIO**
